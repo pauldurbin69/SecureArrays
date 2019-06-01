@@ -6,8 +6,8 @@
     <Authors>Paul Durbin</Authors>
     <Product>SecureArrays</Product>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/pauldurbin69/SecureArrays/master/LICENSE</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/pauldurbin69/SecureArrays</PackageProjectUrl>
     <Copyright>© Paul Durbin 2019</Copyright>
   </PropertyGroup>
@@ -17,13 +17,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\EncryptedArray\EncryptedArray.csproj" PrivateAssets="all" />
     <ProjectReference Include="..\SecureArray\SecureArray.csproj" PrivateAssets="all" />
   </ItemGroup>
 
   <PropertyGroup>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="LICENSE.txt" Pack="true" PackagePath=""/>
+  </ItemGroup>
+
+  <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.2</Version>
+    <Description>Windows Data Protection Api encrypted Byte[] and memory managed byte[]</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
